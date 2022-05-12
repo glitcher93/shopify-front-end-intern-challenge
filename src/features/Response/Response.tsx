@@ -3,32 +3,32 @@
 const Response = ({ prompt, response }: {prompt: string, response: string}) => {
     return (
         <article
-        className='responses__response'
+        className='response'
         >
             <div
-            className='responses__container'
+            className='response__container'
             >
             <h3
-            className='responses__heading'
+            className='response__heading'
             >
                 Prompt:
             </h3>
             <p
-            className='responses__paragraph'
+            className='response__paragraph'
             >
                 {prompt}
             </p>
             </div>
             <div
-            className='responses__container'
+            className='response__container'
             >
             <h3
-            className='responses__heading'
+            className='response__heading'
             >
                 Response:
             </h3>
             <p
-            className='responses__paragraph'
+            className='response__paragraph'
             >
                 {response}
             </p>
