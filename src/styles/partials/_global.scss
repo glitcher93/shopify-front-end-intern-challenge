@@ -1,5 +1,9 @@
 @use './variables' as *;
 
+body {
+    font-family: $font;
+}
+
 h1 {
     margin: 0;
 }
