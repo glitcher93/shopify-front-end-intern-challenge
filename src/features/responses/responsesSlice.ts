@@ -21,7 +21,7 @@ export const postPromptForResponse = createAsyncThunk('responses/postPromptForRe
 
     const headers = {
         headers: {
-            Authorization: `Bearer ${process.env.REACT_OPENAI_SECRET}`
+            Authorization: `Bearer ${import.meta.env.VITE_OPENAI_SECRET}`
         }
     }
 
@@ -67,6 +67,8 @@ const responsesSlice = createSlice({
 });
 
 export const selectResponses = (state: RootState) => state.responses.aiResponses;
+
+export const postPromptPending = (state: RootState) => state.responses.postPromptPending
 
 export default responsesSlice.reducer;
 
