@@ -42,6 +42,7 @@ const AiForm = () => {
         <form
         className='ai-form'
         onSubmit={handleSubmit}
+        method="POST"
         >
             <div
             className='ai-form__group'
