@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../app/store";
 
-interface IAiResponse {
+export interface IAiResponse {
     id: string
     createdAt: number
     prompt: string
