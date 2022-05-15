@@ -1,7 +1,16 @@
 import './Responses.scss';
+import { useSelector } from 'react-redux';
+import { IAiResponse, selectResponses } from './responsesSlice';
 import Response from '../../components/Response/Response';
 
 const Responses = () => {
+
+    const responses = useSelector(selectResponses);
+
+    responses.sort((a: IAiResponse, b: IAiResponse) => {
+      return b.createdAt - a.createdAt;
+    })
+
     return (
         <section
         className='responses'
@@ -11,15 +20,14 @@ const Responses = () => {
           >
             Responses
           </h2>
-          {/* { articles.map((article: {id: number, prompt: string, response: string}) => {
+          { responses.map((response: IAiResponse) => {
             return (
               <Response
-              key={article.id} 
-              prompt={article.prompt}
-              response={article.response}
+              key={response.id} 
+              responseItem={response}
               />
             )
-          }) } */}
+          }) }
         </section>
     )
 }
