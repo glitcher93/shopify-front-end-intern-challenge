@@ -1,16 +1,30 @@
 @use '../../styles/partials/functions' as *;
 
+@keyframes fade-in {
+    0% {
+        transform: translateY(toRem(-20));
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .response {
     
     width: 100%;
     background-color: #96BF48;
     padding: toRem(40);
     border-radius: 10px;
+    margin-bottom: toRem(20);
+    animation: fade-in 1s forwards;
 
     &__container {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         padding-bottom: toRem(24);
+        width: 100%;
     }
 
     &__heading {
@@ -21,5 +35,6 @@
 
     &__paragraph {
         font-size: toRem(18);
+        width: 100%;
     }
 }
