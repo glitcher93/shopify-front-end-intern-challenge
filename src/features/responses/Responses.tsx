@@ -1,13 +1,15 @@
 import './Responses.scss';
 import { useSelector } from 'react-redux';
-import { IAiResponse, selectResponses } from './responsesSlice';
+import { IAiResponse, postPromptPending, selectResponses } from './responsesSlice';
 import Response from '../../components/Response/Response';
 
 const Responses = () => {
 
-    const responses = useSelector(selectResponses);
+    let responses = useSelector(selectResponses);
 
-    responses.sort((a: IAiResponse, b: IAiResponse) => {
+    const responsePending = useSelector(postPromptPending);
+
+    responses = [...responses].sort((a: IAiResponse, b: IAiResponse) => {
       return b.createdAt - a.createdAt;
     })
 
@@ -20,6 +22,32 @@ const Responses = () => {
           >
             Responses
           </h2>
+          { responsePending && 
+            <div
+            className='responses__loading-container'
+            >
+              <h3 
+              className='responses__loading'
+              >
+                Loading
+                <span
+                className='responses__loading--dot'
+                >
+                  .
+                </span>
+                <span
+                className='responses__loading--dot'
+                >
+                  .
+                </span>
+                <span
+                className='responses__loading--dot'
+                >
+                  .
+                </span>
+              </h3>
+            </div>
+          }
           { responses.map((response: IAiResponse) => {
             return (
               <Response
