@@ -1,3 +1,20 @@
 @use '../styles/partials/reset';
 @use '../styles/partials/setup';
 @use '../styles/partials/global';
+@use '../styles/partials/functions' as *;
+
+.main {
+    display: flex;
+    max-width: 1064px;
+    margin: 0 auto;
+
+    &__wrapper {
+        width: 100%;
+    }
+    
+    &__title {
+        padding: toRem(48) 0;
+        font-weight: 600;
+        font-size: toRem(48);
+    }
+}
