@@ -39,8 +39,6 @@ export const postPromptForResponse = createAsyncThunk('responses/postPromptForRe
     return aiResponse;
 })
 
-
-
 const responsesSlice = createSlice({
     name: 'responses',
     initialState: {
