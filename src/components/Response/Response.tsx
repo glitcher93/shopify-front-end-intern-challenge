@@ -1,11 +1,14 @@
+import { IAiResponse } from '../../features/responses/responsesSlice';
 import './Response.scss';
 
 interface ResponseProps {
-    prompt: string
-    response: string
+    responseItem: IAiResponse
 }
 
-const Response = ({ prompt, response }: ResponseProps) => {
+const Response = ({ responseItem }: ResponseProps) => {
+
+    const { prompt, response } = responseItem;
+
     return (
         <article
         className='response'
