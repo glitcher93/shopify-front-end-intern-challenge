@@ -1,0 +1,25 @@
+@use '../../styles/partials/functions' as *;
+
+.response {
+    
+    width: 100%;
+    background-color: #96BF48;
+    padding: toRem(40);
+    border-radius: 10px;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        padding-bottom: toRem(24);
+    }
+
+    &__heading {
+        width: 15%;
+        font-weight: 600;
+        font-size: toRem(20);
+    }
+
+    &__paragraph {
+        font-size: toRem(18);
+    }
+}
