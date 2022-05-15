@@ -61,7 +61,7 @@ const responsesSlice = createSlice({
                 state.failedToPostPrompt = false;
                 state.aiResponses.push(payload)
             })
-            .addCase(postPromptForResponse.pending, (state, action) => {
+            .addCase(postPromptForResponse.rejected, (state, action) => {
                 state.postPromptPending = false;
                 state.failedToPostPrompt = true;
             })
