@@ -1,10 +1,36 @@
 @use '../../styles/partials/functions' as *;
 
+@keyframes fade-in-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .responses {
 
     &__title {
         font-size: toRem(36);
         font-weight: 600;
         padding: toRem(36) 0;
+    }
+
+    &__loading-container {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 toRem(20);
+    }
+
+    &__loading {
+        font-size: toRem(34);
+        font-weight: 600;
+        animation: fade-in-out 0.5s infinite alternate;
+
+        &--dot {
+            font-size: toRem(40);
+            margin: 0 toRem(5);
+        }
     }
 }
