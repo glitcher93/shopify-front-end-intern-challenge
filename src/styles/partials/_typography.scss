@@ -3,6 +3,7 @@
     src: local('Jost'), url('/src/assets/fonts/Jost-Regular.ttf') format('truetype');
     src: local('Jost'), url('/src/assets/fonts/Jost-Regular.woff') format('woff'),
     local('Jost'), url('/src/assets/fonts/Jost-Regular.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
@@ -11,4 +12,5 @@
     src: local('Jost'), url('/src/assets/fonts/Jost-SemiBold.woff') format('woff'),
     local('Jost'), url('/src/assets/fonts/Jost-SemiBold.woff2') format('woff2');
     font-weight: 600;
+    font-display: swap;
 }
