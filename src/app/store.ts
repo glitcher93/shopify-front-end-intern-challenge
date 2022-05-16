@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import responsesReducer, { IAiResponse } from "../features/responses/responsesSlice";
+import responsesReducer from "../features/responses/responsesSlice";
 import aiFormReducer from "../components/AiForm/aiFormSlice";
 
 const saveState = (state: RootState) => {
@@ -14,12 +14,11 @@ const saveState = (state: RootState) => {
 
 let preloadedState;
 
-const persistedResponses = localStorage.getItem('state');
+const persistedState = localStorage.getItem('state');
 
-if (persistedResponses) {
-    preloadedState = {
-        responses: JSON.parse(persistedResponses)
-    }
+if (persistedState) {
+    preloadedState = JSON.parse(persistedState)
+    
 }
 
 const reducer = {
@@ -30,7 +29,7 @@ const reducer = {
 const store = configureStore({
     reducer,
     devTools: true,
-    preloadedState
+    preloadedState: preloadedState || undefined
 });
 
 store.subscribe(() => {
