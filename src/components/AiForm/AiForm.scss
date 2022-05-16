@@ -26,6 +26,11 @@
         flex-direction: column;
         width: 100%;
         padding-bottom: toRem(16);
+
+        &--select {
+            position: relative;
+            padding: 0;
+        }
     }
 
     &__label {
@@ -33,16 +38,71 @@
         padding-bottom: toRem(4);
         font-size: toRem(15);
     }
+
+    &__select {
+        appearance: none;
+        font-family: "Jost", Arial, Helvetica, sans-serif;
+        font-size: toRem(18);
+        border-radius: 5px;
+        height: toRem(46);
+        width: toRem(200);
+        padding: toRem(8);
+        outline: none;
+        cursor: pointer;
+        position: absolute;
+        background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
+        background-repeat: no-repeat;
+        background-position: center right toRem(4);
+        background-size: toRem(32);
+        background-color: #FAFAFA;
+        color: #000;
+        z-index: 10;
+
+        &:focus {
+            border: 1px solid #08B1FF;
+        }
+
+        &:hover {
+            border: 1px solid #08B1FF;
+        }
+
+        &--engine {
+            top: toRem(32);
+            left: toRem(10);
+        }
+
+        &--preset {
+            left: toRem(226);
+            top: toRem(32);
+            width: toRem(300);
+        }
+
+        &--invalid {
+            border: 1px solid #FF1B08;
+            animation: shake-up 0.2s;
+
+            &:focus {
+                border: 1px solid #FF1B08;
+            }
+        }
+    }
     
     &__textarea {
+        font-family: "Jost", Arial, Helvetica, sans-serif;
+        font-size: toRem(18);
         width: 100%;
         height: toRem(250);
         outline: none;
         border-radius: 5px;
-        padding: toRem(8);
+        padding: toRem(68) toRem(8) toRem(8);
         resize: none;
+        background-color: #F1F1F1;
 
         &:focus {
+            border: 1px solid #08B1FF;
+        }
+
+        &:hover {
             border: 1px solid #08B1FF;
         }
 
