@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import responsesReducer from "../features/responses/responsesSlice";
-import aiFormReducer from "../components/AiForm/aiFormSlice";
+import aiFormReducer from "../features/AiForm/aiFormSlice";
 
 const saveState = (state: RootState) => {
     try {

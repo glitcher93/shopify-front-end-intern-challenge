@@ -1,4 +1,4 @@
-import AiForm from '../components/AiForm/AiForm';
+import AiForm from '../features/AiForm/AiForm';
 import Responses from '../features/responses/Responses';
 import './App.scss';
 
