@@ -29,11 +29,18 @@ const aiFormSlice = createSlice({
             state.promptRequired = false;
             state.preset = action.payload
         },
-        togglePrompt: (state, action) => {
-            state.promptRequired = action.payload;
+        togglePrompt: (state) => {
+            state.promptRequired = true;
         },
-        toggleEngine: (state, action) => {
-            state.engineRequired = action.payload;
+        toggleEngine: (state) => {
+            state.engineRequired = true;
+        },
+        resetForm: (state) => {
+            state.prompt = "";
+            state.promptRequired = false;
+            state.engine = "";
+            state.engineRequired = false;
+            state.preset = "";
         }
     }
 });
@@ -48,6 +55,6 @@ export const promptRequired = (state: RootState) => state.aiForm.promptRequired;
 
 export const engineRequired = (state: RootState) => state.aiForm.engineRequired;
 
-export const { changePrompt, changeEngine, changePreset, togglePrompt, toggleEngine  } = aiFormSlice.actions;
+export const { changePrompt, changeEngine, changePreset, togglePrompt, toggleEngine, resetForm  } = aiFormSlice.actions;
 
 export default aiFormSlice.reducer;
