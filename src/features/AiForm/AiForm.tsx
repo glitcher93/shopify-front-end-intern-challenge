@@ -1,6 +1,6 @@
 import './AiForm.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { postPromptForResponse } from '../../features/responses/responsesSlice';
+import { postPromptForResponse } from '../responses/responsesSlice';
 import { selectPrompt, selectEngine, selectPreset, changePrompt, changeEngine, changePreset, togglePrompt, toggleEngine, promptRequired, engineRequired, resetForm } from './aiFormSlice';
 import { ChangeEvent, FormEvent, useEffect } from 'react';
 import { AppDispatch } from '../../app/store';
