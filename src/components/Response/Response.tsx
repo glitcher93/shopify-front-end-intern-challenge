@@ -1,9 +1,5 @@
-import { IAiResponse } from '../../features/responses/responsesSlice';
+import { ResponseProps } from '../../utils/interfaces';
 import './Response.scss';
-
-interface ResponseProps {
-    responseItem: IAiResponse
-}
 
 const Response = ({ responseItem }: ResponseProps) => {
 

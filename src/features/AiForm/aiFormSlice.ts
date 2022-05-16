@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../app/store";
-
-const promptComparison = (prompt: string, preset: string) => {
-    return prompt.split("") === preset.split("");
-}
+import { RootState } from "../../utils/interfaces";
+import { promptComparison } from "../../utils/utils";
 
 const aiFormSlice = createSlice({
     name: 'aiForm',

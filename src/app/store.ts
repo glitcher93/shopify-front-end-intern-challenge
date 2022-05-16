@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import responsesReducer from "../features/responses/responsesSlice";
 import aiFormReducer from "../features/AiForm/aiFormSlice";
+import { RootState } from "../utils/interfaces";
 
 const saveState = (state: RootState) => {
     try {
@@ -36,9 +37,5 @@ store.subscribe(() => {
     const state = store.getState();
     saveState(state);
 })
-
-export type RootState = ReturnType<typeof store.getState>;
-
-export type AppDispatch = typeof store.dispatch;
 
 export default store;

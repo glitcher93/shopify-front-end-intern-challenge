@@ -1,18 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { RootState } from "../../app/store";
 
-export interface IAiResponse {
-    id: string
-    createdAt: number
-    prompt: string
-    response: string
-}
-
-interface AsyncPromptRequest {
-    engine: string
-    prompt: string
-}
+import { AsyncPromptRequest, IAiResponse, RootState } from "../../utils/interfaces";
 
 export const postPromptForResponse = createAsyncThunk('responses/postPromptForResponse', async ({engine, prompt}: AsyncPromptRequest) => {
     const requestBody = {
