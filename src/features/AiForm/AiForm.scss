@@ -1,9 +1,9 @@
 @use '../../styles/partials/functions' as *;
 @use '../../styles/partials/keyframes' as *;
+@use '../../styles/partials/variables' as *;
 
 .ai-form {
     
-
     &__group {
         display: flex;
         flex-direction: column;
@@ -24,7 +24,7 @@
 
     &__select {
         appearance: none;
-        font-family: "Jost", Arial, Helvetica, sans-serif;
+        font-family: $font;
         font-size: toRem(18);
         border-radius: 5px;
         height: toRem(46);
@@ -37,16 +37,15 @@
         background-repeat: no-repeat;
         background-position: center right toRem(4);
         background-size: toRem(32);
-        background-color: #FAFAFA;
-        color: #000;
+        background-color: $select-background;
         z-index: 10;
 
         &:focus {
-            border: 1px solid #08B1FF;
+            border: 1px solid $border-hover-focus;
         }
 
         &:hover {
-            border: 1px solid #08B1FF;
+            border: 1px solid $border-hover-focus;
         }
 
         &--engine {
@@ -61,17 +60,17 @@
         }
 
         &--invalid {
-            border: 1px solid #FF1B08;
+            border: 1px solid $error-border;
             animation: shake-up 0.2s;
 
             &:focus {
-                border: 1px solid #FF1B08;
+                border: 1px solid $error-border;
             }
         }
     }
     
     &__textarea {
-        font-family: "Jost", Arial, Helvetica, sans-serif;
+        font-family: $font;
         font-size: toRem(18);
         width: 100%;
         height: toRem(250);
@@ -79,26 +78,25 @@
         border-radius: 5px;
         padding: toRem(68) toRem(8) toRem(8);
         resize: none;
-        background-color: #F1F1F1;
+        background-color: $textarea-background;
+        border: 1px solid $general-border;
 
         &:focus {
-            border: 1px solid #08B1FF;
+            border: 3px solid $border-hover-focus;
         }
 
         &:hover {
-            border: 1px solid #08B1FF;
+            border: 3px solid $border-hover-focus;
         }
 
         &--invalid {
-            border: 1px solid #FF1B08;
+            border: 1px solid $error-border;
             animation: shake-up 0.2s;
 
             &:focus {
-                border: 1px solid #FF1B08;
+                border: 1px solid $error-border;
             }
         }
-
-        
     }
 
     &__button-container {
@@ -107,7 +105,7 @@
     }
 
     &__button {
-        font-family: "Jost", Arial, Helvetica, sans-serif;
+        font-family: $font;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -117,14 +115,14 @@
         cursor: pointer;
         text-transform: uppercase;
         font-weight: 600;
-        background-color: #96BF48;
+        background-color: $button-color;
         border: 0;
         border-radius: toRem(20);
         transition: background-color 0.3s, color 0.3s;
 
         &:hover {
-            background-color: #5E8E3E;
-            color: #FFF;
+            background-color: $button-hover;
+            color: $button-text;
         }
     }
 }
