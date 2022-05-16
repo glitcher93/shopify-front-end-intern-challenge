@@ -1,4 +1,17 @@
 @use './typography' as *;
 
-
+//Font
 $font: 'Jost', Arial, sans-serif;
+
+// Colors
+$gradient-main: #96BF48;
+$gradient-main-two: #000;
+$general-border: #E1E1E1;
+$select-background: #FAFAFA;
+$textarea-background: #F1F1F1;
+$border-hover-focus: #08B1FF;
+$error-border: #FF1B08;
+$button-color: #96BF48;
+$button-hover: #5E8E3E;
+$button-text: #FFF;
+$response-background: #96BF48;
