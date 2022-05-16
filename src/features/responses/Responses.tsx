@@ -22,7 +22,8 @@ const Responses = () => {
           >
             Responses
           </h2>
-          { responsePending && 
+          { 
+            responsePending && 
             <div
             className='responses__loading-container'
             >
@@ -48,14 +49,16 @@ const Responses = () => {
               </h3>
             </div>
           }
-          { responses.map((response: IAiResponse) => {
-            return (
-              <Response
-              key={response.id} 
-              responseItem={response}
-              />
-            )
-          }) }
+          { 
+            responses.map((response: IAiResponse) => {
+              return (
+                <Response
+                key={response.id} 
+                responseItem={response}
+                />
+              )
+            })
+          }
         </section>
     )
 }
