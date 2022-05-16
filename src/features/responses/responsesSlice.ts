@@ -9,7 +9,12 @@ export interface IAiResponse {
     response: string
 }
 
-export const postPromptForResponse = createAsyncThunk('responses/postPromptForResponse', async (prompt: string) => {
+interface AsyncPromptRequest {
+    engine: string
+    prompt: string
+}
+
+export const postPromptForResponse = createAsyncThunk('responses/postPromptForResponse', async ({engine, prompt}: AsyncPromptRequest) => {
     const requestBody = {
         prompt,
         temperature: 0.5,
@@ -25,10 +30,10 @@ export const postPromptForResponse = createAsyncThunk('responses/postPromptForRe
         }
     }
 
-    const { data } = await axios.post("https://api.openai.com/v1/engines/text-curie-001/completions", requestBody, headers);
+    const { data } = await axios.post(`https://api.openai.com/v1/engines/${engine}/completions`, requestBody, headers);
 
     const { id, created, choices } = data; 
-    
+
     const aiResponse = {
         id,
         createdAt: created, 
