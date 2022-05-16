@@ -1,15 +1,5 @@
 @use '../../styles/partials/functions' as *;
-
-@keyframes fade-in {
-    0% {
-        transform: translateY(toRem(-20));
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+@use '../../styles/partials/keyframes' as *;
 
 .response {
     

@@ -1,13 +1,5 @@
 @use '../../styles/partials/functions' as *;
-
-@keyframes fade-in-out {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
+@use '../../styles/partials/keyframes' as *;
 
 .responses {
 

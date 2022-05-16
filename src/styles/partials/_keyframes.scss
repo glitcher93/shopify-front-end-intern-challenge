@@ -1,0 +1,37 @@
+@keyframes shake-up {
+    0% {
+        transform: translateX(toRem(10));
+    }
+    25% {
+        transform: translateX(toRem(-20));
+    }
+    50% {
+        transform: translateX(toRem(10));
+    }
+    75% {
+        transform: translateX(toRem(-20));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateY(toRem(-20));
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

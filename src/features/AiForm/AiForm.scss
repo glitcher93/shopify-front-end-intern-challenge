@@ -1,22 +1,5 @@
 @use '../../styles/partials/functions' as *;
-
-@keyframes shake-up {
-    0% {
-        transform: translateX(toRem(10));
-    }
-    25% {
-        transform: translateX(toRem(-20));
-    }
-    50% {
-        transform: translateX(toRem(10));
-    }
-    75% {
-        transform: translateX(toRem(-20));
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+@use '../../styles/partials/keyframes' as *;
 
 .ai-form {
     
