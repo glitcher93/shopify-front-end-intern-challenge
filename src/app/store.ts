@@ -1,14 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import responsesReducer from "../features/responses/responsesSlice";
-
-const loadState = () => {
-    try {
-        const stringifiedState = localStorage.getItem('state');
-        return stringifiedState ? JSON.parse(stringifiedState) : undefined;
-    } catch (e) {
-        console.log(e);
-    }
-}
+import responsesReducer, { IAiResponse } from "../features/responses/responsesSlice";
+import aiFormReducer from "../components/AiForm/aiFormSlice";
 
 const saveState = (state: RootState) => {
     try {
@@ -20,16 +12,25 @@ const saveState = (state: RootState) => {
     }
 }
 
-const persistedStore = loadState();
+let preloadedState;
+
+const persistedResponses = localStorage.getItem('state');
+
+if (persistedResponses) {
+    preloadedState = {
+        responses: JSON.parse(persistedResponses)
+    }
+}
 
 const reducer = {
-    responses: responsesReducer
+    responses: responsesReducer,
+    aiForm: aiFormReducer
 }
 
 const store = configureStore({
     reducer,
     devTools: true,
-    preloadedState: persistedStore
+    preloadedState
 });
 
 store.subscribe(() => {
