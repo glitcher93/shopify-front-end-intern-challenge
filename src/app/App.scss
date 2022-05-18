@@ -3,20 +3,33 @@
 @use '../styles/partials/global';
 @use '../styles/partials/functions' as *;
 @use '../styles/partials/keyframes' as *;
+@use '../styles/partials/mixins.scss' as *;
 
 .main {
     background: linear-gradient(315deg, #000 20%, #96BF48 80%);
-    height: 100vh;
+    height: 100%;
 
     &__wrapper {
         width: 100%;
-        max-width: 1064px;
-        margin: 0 auto;
+        padding: 0 toRem(16);
+
+        @include tablet {
+            padding: 0 toRem(36);
+        }
+
+        @include desktop {
+            max-width: 1064px;
+            margin: 0 auto;
+        }
     }
     
     &__title {
         padding: toRem(48) 0;
         font-weight: 600;
-        font-size: toRem(48);
+        font-size: toRem(36);
+
+        @include tablet {
+            font-size: toRem(48);
+        }
     }
 }
