@@ -76,75 +76,91 @@ const AiForm = () => {
         method="POST"
         >
             <div
-            className='ai-form__group ai-form__group--select'
+            className='ai-form__select-container'
             >
-                <select 
-                className={`ai-form__select ai-form__select--engine ${isEngineFalse ? "ai-form__select--invalid" : ""}`}
-                name="engine" 
-                id="engine"
-                onChange={handleOnChange}
-                value={engine}
+                <div
+                className='ai-form__group ai-form__group--select'
                 >
-                    <option 
-                    value=""
-                    disabled
+                    <label 
+                    htmlFor="engine"
+                    className='ai-form__label ai-form__label--select'
                     >
-                        Choose an engine
-                    </option>
-                    <option 
-                    value="text-curie-001"
+                        Engine
+                    </label>
+                    <select 
+                    className={`ai-form__select ai-form__select--engine ${isEngineFalse ? "ai-form__select--invalid" : ""}`}
+                    name="engine" 
+                    id="engine"
+                    onChange={handleOnChange}
+                    value={engine}
                     >
-                        Curie
-                    </option>
-                    <option 
-                    value="text-babbage-001"
-                    >
-                        Babbage
-                    </option>
-                    <option 
-                    value="text-ada-001"
-                    >
-                        Ada
-                    </option>
-                    <option 
-                    value="text-davinci-002"
-                    >
-                        Da Vinci
-                    </option>
-                </select>
-            </div>
-            <div
-            className='ai-form__group ai-form__group--select'
-            >
-                <select 
-                className="ai-form__select ai-form__select--preset"
-                name="preset" 
-                id="preset"
-                onChange={handleOnChange}
-                value={preset}
+                        <option 
+                        value=""
+                        disabled
+                        >
+                            Choose an engine
+                        </option>
+                        <option 
+                        value="text-curie-001"
+                        >
+                            Curie
+                        </option>
+                        <option 
+                        value="text-babbage-001"
+                        >
+                            Babbage
+                        </option>
+                        <option 
+                        value="text-ada-001"
+                        >
+                            Ada
+                        </option>
+                        <option 
+                        value="text-davinci-002"
+                        >
+                            Da Vinci
+                        </option>
+                    </select>
+                </div>
+                <div
+                className='ai-form__group ai-form__group--select'
                 >
-                    <option 
-                    value=""
-                    disabled
+                    <label 
+                    htmlFor="preset"
+                    className='ai-form__label ai-form__label--select'
                     >
-                        Choose a preset (optional)
-                    </option>
-                    <option 
-                    value="Tell a joke"
+                        Preset
+                    </label>
+                    <select 
+                    className="ai-form__select ai-form__select--preset"
+                    name="preset" 
+                    id="preset"
+                    onChange={handleOnChange}
+                    value={preset}
                     >
-                        Tell a joke
-                    </option>
-                    <option 
-                    value="Give me a good recipe"
-                    >
-                        Give me a good recipe
-                    </option>
-                    <option 
-                    value="Explain quantum physics"
-                    >
-                        Explain quantum physics
-                    </option>
-                </select>
+                        <option 
+                        value=""
+                        disabled
+                        >
+                            Choose a preset (optional)
+                        </option>
+                        <option 
+                        value="Tell a joke"
+                        >
+                            Tell a joke
+                        </option>
+                        <option 
+                        value="Give me a good recipe"
+                        >
+                            Give me a good recipe
+                        </option>
+                        <option 
+                        value="Explain quantum physics"
+                        >
+                            Explain quantum physics
+                        </option>
+                    </select>
+                </div>
             </div>
             <div
             className='ai-form__group'
