@@ -1,15 +1,15 @@
 @use '../../styles/partials/functions' as *;
 @use '../../styles/partials/keyframes' as *;
+@use '../../styles/partials/variables' as *;
 
 .response {
-    
-    width: 100%;
-    background-color: #96BF48;
+    width: 99%;
+    background-color: $response-background;
     padding: toRem(40);
     border-radius: 10px;
     margin-bottom: toRem(20);
     animation: fade-in 1s forwards;
-    border: 1px solid #E1E1E1;
+    box-shadow: 0px 5px 5px rgba(19, 24, 44, 0.5);
 
     &__container {
         display: flex;
