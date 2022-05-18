@@ -1,5 +1,6 @@
 @use '../../styles/partials/functions' as *;
 @use '../../styles/partials/keyframes' as *;
+@use '../../styles/partials/mixins' as *;
 
 .responses {
     height: 100%;
@@ -7,11 +8,16 @@
     position: relative;
 
     &__title {
-        font-size: toRem(36);
+        font-size: toRem(26);
         font-weight: 600;
-        padding: toRem(36) 0;
+        padding: toRem(24) 0;
         opacity: 0;
         animation: fade-in-two 2s forwards;
+
+        @include tablet {
+            font-size: toRem(36);
+            padding: toRem(36) 0;
+        }
     }
 
     &__loading-container {
@@ -47,13 +53,24 @@
     }
 
     &__loading {
-        font-size: toRem(34);
+        font-size: toRem(24);
         font-weight: 600;
         animation: fade-in-out 0.5s infinite alternate;
+        background-color: #000;
+        color: #FFF;
+        padding: toRem(4);
+
+        @include tablet {
+            font-size: toRem(34);
+        }
 
         &--dot {
-            font-size: toRem(40);
+            font-size: toRem(30);
             margin: 0 toRem(5);
+
+            @include tablet {
+                font-size: toRem(40);
+            }
         }
     }
 }

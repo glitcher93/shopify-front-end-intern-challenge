@@ -1,6 +1,7 @@
 @use '../../styles/partials/functions' as *;
 @use '../../styles/partials/keyframes' as *;
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
 .ai-form {
     
@@ -19,22 +20,42 @@
     &__label {
         font-weight: 600;
         padding-bottom: toRem(4);
-        font-size: toRem(15);
+        font-size: toRem(13);
         opacity: 0;
         animation: fade-in-two 2s forwards;
+
+        @include tablet {
+            font-size: toRem(15);
+        }
+
+        &--select {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__select-container {
+        padding-bottom: toRem(16);
+        display: flex;
+        flex-wrap: wrap;
+
+        @include tablet {
+            display: block;
+        }
     }
 
     &__select {
         appearance: none;
         font-family: $font;
-        font-size: toRem(18);
+        font-size: toRem(16);
         border-radius: 5px;
-        height: toRem(46);
-        width: toRem(200);
+        height: toRem(36);
+        width: 100%;
         padding: toRem(8);
+        margin-bottom: toRem(24);
         outline: none;
         cursor: pointer;
-        position: absolute;
         background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
         background-repeat: no-repeat;
         background-position: center right toRem(4);
@@ -42,7 +63,17 @@
         background-color: $select-background;
         z-index: 10;
         opacity: 0;
-        animation: fade-in-two 2s 2s forwards;
+        animation: fade-in-two 2s 1s forwards;
+        box-shadow: -2px 2px 5px rgba(19, 24, 44, 0.5);
+
+        @include tablet {
+            width: toRem(200);
+            position: absolute;
+            height: toRem(46);
+            font-size: toRem(18);
+            animation: fade-in-two 2s 2s forwards;
+            box-shadow: none;
+        }
 
         &:focus {
             border: 1px solid $border-hover-focus;
@@ -53,14 +84,22 @@
         }
 
         &--engine {
-            top: toRem(32);
-            left: toRem(10);
+            @include tablet {
+                top: toRem(46);
+                left: toRem(10);
+                margin-bottom: 0;
+            }
         }
 
         &--preset {
-            left: toRem(226);
-            top: toRem(32);
-            width: toRem(300);
+            margin-bottom: 0;
+            width: 100%;
+
+            @include tablet {
+                width: toRem(300);
+                left: toRem(226);
+                top: toRem(46);
+            }
         }
 
         &--invalid {
@@ -74,18 +113,23 @@
     
     &__textarea {
         font-family: $font;
-        font-size: toRem(18);
+        font-size: toRem(16);
         width: 100%;
         height: toRem(250);
         outline: none;
         border-radius: 5px;
-        padding: toRem(68) toRem(8) toRem(8);
+        padding: toRem(8);
         resize: none;
         background-color: $textarea-background;
         border: 1px solid $general-border;
         box-shadow: -2px 2px 5px rgba(19, 24, 44, 0.5);
         opacity: 0;
         animation: fade-in-two 2s 1s forwards;
+
+        @include tablet {
+            font-size: toRem(18);
+            padding: toRem(68) toRem(8) toRem(8);
+        }
 
         &:focus {
             border: 3px solid $border-hover-focus;
@@ -114,9 +158,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: toRem(150);
-        height: toRem(50);
-        font-size: toRem(16);
+        width: 100%;
+        height: toRem(40);
+        font-size: toRem(14);
         cursor: pointer;
         text-transform: uppercase;
         font-weight: 600;
@@ -125,7 +169,14 @@
         border-radius: toRem(20);
         transition: background-color 0.3s, color 0.3s;
         opacity: 0;
-        animation: fade-in-two 2s 3s forwards;
+        animation: fade-in-two 2s 2s forwards;
+
+        @include tablet {
+            width: toRem(150);
+            height: toRem(50);
+            font-size: toRem(16);
+            animation: fade-in-two 2s 3s forwards;
+        }
 
         &:hover {
             background-color: $button-hover;
