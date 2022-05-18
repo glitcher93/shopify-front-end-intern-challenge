@@ -1,7 +1,8 @@
 import './Responses.scss';
 import { useSelector } from 'react-redux';
-import { IAiResponse, postPromptPending, selectResponses } from './responsesSlice';
+import { postPromptPending, selectResponses } from './responsesSlice';
 import Response from '../../components/Response/Response';
+import { IAiResponse } from '../../utils/interfaces';
 
 const Responses = () => {
 
@@ -49,16 +50,20 @@ const Responses = () => {
               </h3>
             </div>
           }
-          { 
-            responses.map((response: IAiResponse) => {
-              return (
-                <Response
-                key={response.id} 
-                responseItem={response}
-                />
-              )
-            })
-          }
+          <div
+          className='responses__container'
+          >
+            { 
+              responses.map((response: IAiResponse) => {
+                return (
+                  <Response
+                  key={response.id} 
+                  responseItem={response}
+                  />
+                )
+              })
+            }
+          </div>
         </section>
     )
 }
