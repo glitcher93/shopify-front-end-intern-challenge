@@ -1,9 +1,21 @@
 import './AiForm.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { postPromptForResponse } from '../responses/responsesSlice';
-import { selectPrompt, selectEngine, selectPreset, changePrompt, changeEngine, changePreset, togglePrompt, toggleEngine, promptRequired, engineRequired, resetForm } from './aiFormSlice';
+import { 
+    selectPrompt,
+    selectEngine, 
+    selectPreset, 
+    changePrompt, 
+    changeEngine, 
+    changePreset, 
+    togglePrompt, 
+    toggleEngine, 
+    promptRequired, 
+    engineRequired, 
+    resetForm 
+} from './aiFormSlice';
 import { ChangeEvent, FormEvent, useEffect } from 'react';
-import { AppDispatch } from '../../app/store';
+import { AppDispatch } from '../../utils/interfaces';
 
 
 const AiForm = () => {
