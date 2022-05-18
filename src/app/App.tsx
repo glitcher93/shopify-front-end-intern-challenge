@@ -14,7 +14,7 @@ function App() {
         <h1
         className='main__title'
         >
-          Fun With AI
+          Having Fun With AI
         </h1>
         <AiForm />
         <Responses />
